@@ -1,0 +1,173 @@
+
+
+.i {
+  display: flex;
+  height: 100vh;
+  color: whitesmoke;
+}
+
+.i-left {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: black;
+}
+
+.i-right {
+  flex: 1;
+  position: relative;
+  background-color: black;
+}
+
+.logo {
+  position:absolute;
+  top: 0px;
+  left: 0px;
+  cursor: pointer;
+  z-index:100;
+  width:120px;
+}
+
+.burger {
+  position:absolute;
+  top: 0px;
+  right: 0px;
+  z-index:100;
+  width:250%;
+  cursor: pointer;
+}
+
+.i-left-wrapper {
+  margin-left:15%;
+  padding: 50px;
+  height: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.i-intro {
+  font-size: 30px;
+  font-weight: 300;
+}
+
+.i-name {
+  font-size: 60px;
+}
+
+.i-title {
+  height: 50px;
+  overflow: hidden;
+}
+
+.i-title-wrapper {
+  height: 100%;
+  animation: move 10s ease-in-out infinite alternate;
+}
+
+@keyframes move {
+  25% {
+    transform: translateY(-50px);
+  }
+  50% {
+    transform: translateY(-100px);
+  }
+  75% {
+    transform: translateY(-150px);
+  }
+  100% {
+    transform: translateY(-200px);
+  }
+}
+
+.i-title-item {
+  height: 50px;
+  font-size: 30px;
+  font-weight: bold;
+  color: #59b256;
+  display: flex;
+  align-items: center;
+}
+
+.i-scroll {
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  bottom: 20px;
+}
+
+.i-img {
+  margin-top:20%;
+  margin-left:10%;
+  width: 60%;
+  height: 60%;
+  object-fit: cover;
+  position: absolute;
+}
+
+.i-bg {
+  clip-path: polygon(100% 0%, 100% 51%, 100% 100%, 25% 100%, 0% 50%, 25% 0%);
+  background-color: #59b256;
+  width: 90%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+@media screen and (max-width: 480px) {
+  .i {
+    flex-direction: column;
+  }
+
+  .i-left-wrapper {
+  
+    padding: 10px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 100%;
+  }
+
+  .i-desc{
+    display: none;
+  }
+  
+}
+
+
+/* nav */
+/* .gpt3__navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 2rem 6rem;
+}
+
+.gpt3__navbar-links {
+    flex: 1;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.gpt3__navbar-links_logo {
+    margin-right: 2rem;
+}
+
+.gpt3__navbar-links_logo img {
+    width: 62.56px;
+    height: 16.02px;
+}
+.gpt3__navbar-links_container {
+    display: flex;
+    flex-direction: row;
+}
+
+.gpt3__navbar-sign {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+} */
