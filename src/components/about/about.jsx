@@ -1,7 +1,7 @@
 import React from 'react'
 import styled, { keyframes, ThemeProvider } from 'styled-components'
 import {DarkTheme} from '../../components/themes/Themes';
-
+import Navbar from "../navbar/Navbar";
 // import LogoComponent from '../subComponents/LogoComponent';
 // import SocialIcons from '../subComponents/SocialIcons';
 // import PowerButton from '../subComponents/PowerButton';
@@ -9,7 +9,7 @@ import ParticleComponent from '../../subComponents/ParticleComponent';
 
 import BigTitle from '../../subComponents/BigTitle'
 import astronaut from '../../image/me.jpg'
-import sun from '../../image/ball.png'
+import sun from '../../image/earth.png'
 
 const Box = styled.div`
 background-color: ${props => props.theme.body};3
@@ -23,6 +23,16 @@ const float = keyframes`
 50% { transform: translateY(15px) translateX(15px) }
 100% { transform: translateY(-10px) }
 `
+
+const rotate = keyframes`
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}`
+
 const Spaceman = styled.div`
 position: absolute;
 top: 12%;
@@ -39,21 +49,19 @@ img{
 `
 
 const Waterman = styled.div`
+animation: App-logo-spin infinite 20s linear;
 position: absolute;
 top: 50%;
 right: 23%;
 width: 15vw;
-// animation: ${float} 2s ease infinite;
+animation: ${float} 6s ease infinite;
 z-index:0;
-transform: scaleY(-1);
-// &:hover {
-    
-//     img{
-//         width: 160%;
-//     }
-// }
+// transform: scaleY(-1);
+&:hover {
+    animation: ${rotate} 18s ease infinite;
+}
 img{
-    width: 150%;
+    width: 170%;
     height: auto;
     border-radius:50%:
     transform: scaleX(-1);
@@ -86,6 +94,8 @@ const Main =  styled.div`
 
 const AboutPage = () => {
     return (
+        <>
+        <Navbar />
         <ThemeProvider theme={DarkTheme}>
             <Box>
                 {/* <LogoComponent theme='dark'/> */}
@@ -115,7 +125,7 @@ const AboutPage = () => {
                 <BigTitle text="Let's Go" top="10%" left="7%" />
             </Box>
         </ThemeProvider>
-        
+       </> 
     )
 }
 

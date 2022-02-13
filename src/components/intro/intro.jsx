@@ -7,41 +7,26 @@ import { Background } from "tsparticles/Options/Classes/Background/Background";
 
 const Intro = () =>
 {
-  // const [toggleMenu, setToggleMenu] = useState(false);
+  
   return (
     <div className="i">
 
-        {/* <div className="gpt3__navbar">
-          <div className="gpt3__navbar-links">
-            <div className="gpt3__navbar-links_logo">
-              <img src={Logo} />
-            </div>
-            <div className="gpt3__navbar-links_container">
-              <p><a href="#home">Home</a></p>
-              <p><a href="#wgpt3">What is GPT3?</a></p>
-              <p><a href="#possibility">Open AI</a></p>
-              <p><a href="#features">Case Studies</a></p>
-              <p><a href="#blog">Library</a></p>
-            </div>
-          </div>
-        </div> */}
+        
 
       <div className="i-left">
-        {/* <img src={Logo} alt="logo" className="logo" id="#"/> */}
+        
         <div className="i-left-wrapper">
           <h2 className="i-intro">Hello, My name is</h2>
           <h1 className="i-name">Lee Chi</h1>
           <div className="i-title">
             <div className="i-title-wrapper">
-              <div className="i-title-item">HTML, CSS</div>
+              <div className="i-title-item">CSS</div>
               <div className="i-title-item">React</div>
-              <div className="i-title-item">Typescript</div>
-              {/* {/* <div className="i-title-item">Writer</div> */}
               <div className="i-title-item">Javascript</div>
             </div>
           </div>
           <p className="i-desc">
-            I am a Junior Frontend Developer located in Helsinki, Finland.
+            I am a Junior Frontend Developer located in Taipei, Taiwan.
             <br/>Scrow to down below to get to know me.
 
           </p>

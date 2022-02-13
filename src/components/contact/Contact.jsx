@@ -2,7 +2,8 @@ import "./contact.css";
 import { FcCellPhone } from 'react-icons/fc';
 import { SiMinutemailer } from 'react-icons/si'
 import { FcHome } from 'react-icons/fc'
-import {AiOutlineGithub, AiFillLinkedin} from 'react-icons/ai'
+import { AiOutlineGithub, AiFillLinkedin } from 'react-icons/ai'
+import Navbar from "../navbar/Navbar";
 
 // import Phone from "../../img/phone.png";
 // import Email from "../../img/email.png";
@@ -38,6 +39,9 @@ const Contact = () => {
   };
 
   return (
+    <>
+      <Navbar/>
+    
     <div className="c">
       <div className="c-bg"></div>
       <div className="c-wrapper">
@@ -99,8 +103,10 @@ const Contact = () => {
           </form>
         </div>
       </div>
-    </div>
-  );
+      </div>
+      </>
+      );
+      
 };
 
 export default Contact;

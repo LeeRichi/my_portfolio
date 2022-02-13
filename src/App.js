@@ -3,24 +3,22 @@ import About from '../src/components/about/about'
 import ProductList from '../src/components/productList/ProductList'
 import Contact from '../src/components/contact/Contact'
 import Navbar from '../src/components/navbar/Navbar'
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Routes,
-  Link
-} from "react-router-dom";
 import './App.css'
+
+import Work from '../src/components/Work/Work'
 
 
 function App() {
   return (
     <div>
 
-          <Navbar />
+          {/* <Navbar /> */}
           <Intro />
           <About />
           <ProductList />
+      
+          {/* <Work /> */}
+
           <Contact />
                      
     </div>

@@ -137,11 +137,16 @@ main {
   position: absolute;
   left: -999px;
   transition: var(--transition-speed);
+  margin-left:30%;
 }
 
 .navbar:hover .logo svg {
   transform: rotate(-180deg);
+  opacity: 0;
+  
 }
+
+
 
 /* Small screens */
 @media only screen and (max-width: 600px) {
