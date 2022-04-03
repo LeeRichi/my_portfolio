@@ -4,7 +4,7 @@ import { GiPowerButton, GiPlantSeed } from 'react-icons/gi'
 import {FaRegAddressCard, FaPaperPlane} from 'react-icons/fa'
 // import Logo from "../../image/6-removebg-preview.png";
 import './navbar.css';
-import Logo from "../../image/6-removebg-preview.png";
+
 import {BrowserRouter, Link} from "react-router-dom";
 
 const Navbar = () => {
@@ -67,7 +67,7 @@ const Navbar = () => {
         </li>
 
         <li className="nav-item">
-          <Link className="nav-link" to="/ProductList">
+          <Link className="nav-link" to="/Work">
             <div>
               <GiPlantSeed />
             </div>

@@ -1,4 +1,4 @@
-.i-bg {
+/* .i-bg {
   clip-path: polygon(100% 0%, 100% 51%, 100% 100%, 25% 100%, 0% 50%, 25% 0%);
   background-color: #59b256;
   width: 90%;
@@ -6,4 +6,8 @@
   position: absolute;
   top: 0;
   right: 0;
+} */
+
+a{
+  text-decoration: none;
 }

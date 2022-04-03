@@ -149,11 +149,17 @@ main {
 
 
 /* Small screens */
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 900px) {
   .navbar {
     bottom: 0;
     width: 100vw;
     height: 5rem;
+    border-top: 1px solid #b6b6b6;
+    background-color: black;
+  }
+
+  .nav-item{
+    margin-left: -15vw;
   }
 
   .logo {
@@ -174,7 +180,7 @@ main {
 }
 
 /* Large screens */
-@media only screen and (min-width: 600px) {
+@media only screen and (min-width: 900px) {
   .navbar {
     top: 0;
     /* width: 100vw; */

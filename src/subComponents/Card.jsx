@@ -2,62 +2,53 @@ import { motion } from 'framer-motion';
 import React from 'react'
 import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
-// import { Github } from '../components/AllSvgs';
+import './card.css'
 import { AiOutlineGithub } from 'react-icons/ai'
 
 
 
-// const Box = styled(motion.li)`
-// width: 16rem;
-// height: 40vh;
-// background-color: ${props => props.theme.text};
-// color:${props => props.theme.body};
-// padding: 1.5rem 2rem;
-// margin-right: 8rem;
-// border-radius: 0 50px 0 50px;
-// display: flex;
-// flex-direction: column;
-// justify-content: space-between;
-// border: 1px solid ${props => props.theme.body};
-// transition: all 0.2s ease;
-// &:hover{
-// background-color: ${props => props.theme.body};
-// color:${props => props.theme.text};
-// border: 1px solid ${props => props.theme.text};
-// }
-// `
 
-const Box = styled.div`
+const Box = styled(motion.li)`
 width: 16rem;
 height: 40vh;
-
+background-color: black;
+color: white;
 padding: 1.5rem 2rem;
-margin-right: 8rem;
+margin-right: 4rem;
 border-radius: 0 50px 0 50px;
 display: flex;
 flex-direction: column;
 justify-content: space-between;
-
+border: 1px solid white;
 transition: all 0.2s ease;
+z-index:1;
+background-image:url:(${props =>props.img});
+// over-flow:hidden;
 
+
+&:hover{
+background-color: white;
+color:black;
+border: 1px solid black;
+cursor:pointer
+}
 `
 
 const Title = styled.h2`
 font-size: calc(1em + 0.5vw);
 `
-
 const Description = styled.h2`
 font-size: calc(0.8em + 0.3vw);
 font-family: 'Karla',sans-serif;
 font-weight: 500;
 `
 const Tags = styled.div`
-border-top: 2px solid ${props =>props.theme.body};
+border-top: 2px solid white;
 padding-top: 0.5rem;
 display:flex;
 flex-wrap:wrap;
 ${Box}:hover &{
-border-top: 2px solid ${props =>props.theme.text};
+border-top: 2px solid black;
 }
 `
 const Tag = styled.span`
@@ -70,73 +61,100 @@ display: flex;
 justify-content: space-between;
 `
 
-const Link = styled(NavLink)`
-background-color: ${props =>props.theme.body};
-color: ${props =>props.theme.text};
+const Link = styled.a`
+background-color: white;
+color: black;
 text-decoration: none;
-padding:0.5rem calc(2rem + 2vw);
+padding:0.9rem calc(2rem + 2vw);
 border-radius: 0 0 0 50px;
 font-size:calc(1em + 0.5vw);
 ${Box}:hover &{
-    background-color: ${props =>props.theme.text};
-    color: ${props =>props.theme.body};
+    background-color: #59b256;
+    color: white;
 }
 `
 
-const Git = styled(NavLink)`
+const Git = styled.a`
 color: inherit;
 text-decoration: none;
+background-color: ;
+border-radius: 50px;
+
 ${Box}:hover &{
-    &>*{
-        fill:${props =>props.theme.text};
-    }
+    // &>*{
+    //     fill:${props =>props.theme.text};
+    // }
+    color:black;
+    background-color:black;
 }
 `
 
-// Framer motion configuration
-const Item = {
-    hidden:{
-        scale:0
-    },
-    show:{
-        scale:1,
-        transition: {
-            type: 'spring',
-            duration: 0.5
-        }
-    }
-}
+
+// const Img = styled.img`
+//     width:400px;
+//     height: 300px;
+//     display:none;
+//     opacity:95%;
+//     border: solid 1px white;
+//     margin-top: -18rem;
+    
+
+//     ${Box}:hover &{
+//         display:block;
+//     }
+// `
+
+
+
 
 const Card = (props) => {
 
     // const { id, name, description, tags, link, git } = props.data;
     // const { name } = props.products;
-    console.log(props.name)
-    console.log(typeof(props.products[0].name))
+    
+    
 
     return (
         // <Box key={id} variants={Item}>
-        <Box>
-            {/* <Title>{name}</Title> */}
-            <Title>{props.products.name}</Title>
-            {/* <Description>
-                {props.products.description}
-            </Description> */}
-            {/* <Tags>
-            {tags.map((t,id) => {
+        <>
+        <Box props={props.img}>
+            {/* <Img src={props.img}/> */}
+            <Title>{props.name}</Title>
+            <Description>
+                {props.description}
+            </Description>
+            <Tags>
+            {props.tags.map((t,id) => {
                 return <Tag key={id}>#{t}</Tag>
                 })
             }
-            </Tags> */}
-            {/* <Footer>
-                <Link to={{pathname: `${link}`}} target="_blank">
-                    Visit
+            </Tags>
+            <Footer>
+                <Link>
+                    <div>
+                        <a href={props.link}>
+                            visit
+                        </a>
+                    </div>
                 </Link>
-                <Git to={{pathname: `${git}`}} target="_blank">
-                    <AiOutlineGithub width={30} height={30} />
+               
+                <Git>
+                    <a href={props.git}>
+                        <AiOutlineGithub
+                        size="30px"
+                        cursor="pointer"
+                        style={{
+                            position: 'relative',
+                            padding: '15px',
+                            cursor: 'pointer',
+                            color: 'white'
+                        }} />
+                    </a>
                 </Git>
-            </Footer> */}
+            </Footer>
+            
         </Box>
+    </>
     )
 }
 

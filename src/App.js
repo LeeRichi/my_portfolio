@@ -15,9 +15,9 @@ function App() {
           {/* <Navbar /> */}
           <Intro />
           <About />
-          <ProductList />
+          
       
-          {/* <Work /> */}
+          <Work />
 
           <Contact />
                      

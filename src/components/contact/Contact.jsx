@@ -40,7 +40,7 @@ const Contact = () => {
 
   return (
     <>
-      <Navbar/>
+    <Navbar/>
     
     <div className="c">
       <div className="c-bg"></div>
@@ -54,11 +54,7 @@ const Contact = () => {
             <div className="c-info-item">
                 <SiMinutemailer size="30px"/>lee.rich.chi@gmail.com
             </div>
-            <div className="c-info-item">
-              {/* <img className="c-icon" src={Address} alt="" /> */}
-              <FcHome size="30px"/>Porthaninkatu 64, Helsinki
-              
-            </div>
+            
           </div>
           <a href="https://github.com/LeeRichi?tab=repositories">
             <AiOutlineGithub
@@ -82,17 +78,30 @@ const Contact = () => {
               }}
             />
           </a>
-          
+          <div className="c-hide">
+          <div className="shape"></div>
+          {/* <p className="c-desc">
+            Get in touch. Simply write your email and ask me anything.
+          </p> */}
+          <form ref={formRef} onSubmit={handleSubmit}>
+            <h3>Get in touch. Simply write your email and ask me anything.</h3>
+                      
+            <input  type="text" placeholder="Name" name="user_name" />
+            <input  type="text" placeholder="Subject" name="user_subject" />
+            <input  type="text" placeholder="Email" name="user_email" />
+            <textarea  rows="5" placeholder="Message" name="message" />
+            <button>Submit</button>
+            {done && "Succeed"}
+          </form>
+        </div>
         </div>
         <div className="c-right">
-          <p className="c-desc">
+          <div className="shape"></div>
+          {/* <p className="c-desc">
             Get in touch. Simply write your email and ask me anything.
-          </p>
+          </p> */}
           <form ref={formRef} onSubmit={handleSubmit}>
-            {/* <input style={{backgroundColor: darkMode && "#333"}} type="text" placeholder="Name" name="user_name" />
-            <input style={{backgroundColor: darkMode && "#333"}} type="text" placeholder="Subject" name="user_subject" />
-            <input style={{backgroundColor: darkMode && "#333"}} type="text" placeholder="Email" name="user_email" />
-            <textarea style={{ backgroundColor: darkMode && "#333" }} rows="5" placeholder="Message" name="message" /> */}
+            <h3>Get in touch. Simply write your email and ask me anything.</h3>
                       
             <input  type="text" placeholder="Name" name="user_name" />
             <input  type="text" placeholder="Subject" name="user_subject" />

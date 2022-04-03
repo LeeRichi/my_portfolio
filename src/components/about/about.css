@@ -2,6 +2,8 @@
   height: 100vh;
   display: flex;
   align-items: center;
+  width:110vw;
+  overflow: hidden;
 }
 
 .a-left {
@@ -112,5 +114,12 @@
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+
+@media screen and (max-width:900px) {
+  *{
+    font-size: 200%;
   }
 }

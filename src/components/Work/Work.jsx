@@ -3,80 +3,89 @@ import styled, { ThemeProvider } from 'styled-components'
 import {DarkTheme} from '../../components/themes/Themes';
 import Navbar from "../navbar/Navbar";
 import ParticleComponent from '../../subComponents/ParticleComponent';
-// import BigTitle from '../../subComponents/BigTitle'
-import { BigTitle } from '../../subComponents/BigTitle'
+
+import  BigTitle  from '../../subComponents/BigTitle'
 import Card from '../../subComponents/Card'
 import { products } from "../../data";
 import {motion} from 'framer-motion';
 
+import React from 'react';
 
-const Box = styled.div`
-background-color: ${props => props.theme.body};
-height:200vh;
+
+const Title = styled.h1`
+    text-align:center;
+    font-size:30px;
+    margin-left:40vw;
+    margin-top:-60vh;
+    position:absolute;
+    z-index:5;
+    border-bottom: 2px solid white;
+    padding-bottom: 15px;
+
+    @media screen and (max-width: 900px) {
+      margin-left:20vw;
+  }
+`
+
+const Box = styled(motion.div)`
+background-color: black;
+height:100vh;
 position: relative;
 display: flex;
 align-items: center;
 color:white;
+width:100vw;
+overflow:hidden;
+z-index:0;
 `
 
-// const Main = styled(motion.ul)`
-// position: fixed;
-// top: 12rem;
-// left:calc(10rem + 15vw);
-// height: 40vh;
-// display: flex;
-// color:white;
-// `
+const Main = styled(motion.ul)`
+position: relative;
+top: 0rem;
+left:10vw;
+height: 40vh;
+display: flex;
+color:white;
+cursor:grab;
+z-index:3;
+`
 
 const Work = () => {
-
-    // const ref = useRef(null);
-
-    // useEffect(() => {
-    //     let element = ref.current;
-       
-        
-    //     const rotate = () => {
-         
-    //      element.style.transform = `translateX(${-window.pageYOffset}px)`
-      
-         
-    //       return (yinyang.current.style.transform =
-    //         'rotate(' + -window.pageYOffset + 'deg)')
-    //     }
     
-    //     window.addEventListener('scroll', rotate)
-    //     return () => {
-    //       window.removeEventListener('scroll', rotate);
-          
-    //     }
-    //   }, [])
+    const [width, setWidth] = useState(0);
+    const carousel = useRef();
 
-    
+    useEffect(() =>
+    {
+        setWidth(carousel.current.scrollWidth - carousel.current.offsetWidth);
+    }, []);
 
     return (
+        <>
+        <Navbar />
+        {/* <ParticleComponent theme='dark' /> */}
         <ThemeProvider theme={DarkTheme}>
             <Box>
-                {/* <Main ref={ref} initial='hidden' animate='show'  > */}
-                {/* <Main> */}
-                    {/* {
-                        Work.map( d => 
-                        <Card key={d.id} data={d} />
-                        )
-                    } */}
-
-                    {products.map((item) => (
-                        <Card key={item.id} name={item.name}  />
-                    ))}
-                {/* <div>
-                    <Card products={products}/>
-                </div> */}
                     
-                {/* </Main> */}
-                {/* <BigTitlte text="WORK" top='10%' right="20%" /> */}
+                <Title>
+                        Drag here to see my works
+                </Title>
+                
+                    
+                <ParticleComponent theme='dark' />
+                <Main initial='hidden' animate='show' drag='x' ref={carousel}
+                        dragConstraints={{right: 0, left: -1000}}>
+                   
+                    {products.map((item) => (
+                        <Card key={item.id} name={item.name} tags={item.tags} description={item.description} img={item.img} link={item.link} git={item.git}/>
+                    ))}
+                                  
+                    </Main>
+                   
             </Box>
 
         </ThemeProvider>
+        </>
         
     )
 }

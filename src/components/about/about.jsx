@@ -12,11 +12,11 @@ import astronaut from '../../image/me.jpg'
 import sun from '../../image/earth.png'
 
 const Box = styled.div`
-background-color: ${props => props.theme.body};3
+background-color: ${props => props.theme.body};
 width: 100vw;
 height:100vh;
 position: relative;
-overflow: hidden;
+
 `
 const float = keyframes`
 0% { transform: translateY(-10px) }
@@ -85,6 +85,10 @@ const Main =  styled.div`
   position: absolute;
   left: calc(5rem + 5vw);
   top: 10rem;
+
+  @media screen and (max-width: 900px) {
+      font-size 20px;
+  }
   
   
 `
@@ -122,7 +126,7 @@ const AboutPage = () => {
                     {/* I believe everything is an Art when you put your consciousness in it. You can connect with me via social links. */}
                     
                 </Main>
-                <BigTitle text="Let's Go" top="10%" left="7%" />
+                <BigTitle text="Welcome" top="10%" left="7%" />
             </Box>
         </ThemeProvider>
        </> 

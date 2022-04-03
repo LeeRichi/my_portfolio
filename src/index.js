@@ -5,6 +5,7 @@ import Intro from '../src/components/intro/intro'
 import About from '../src/components/about/about'
 import Contact from './components/contact/Contact';
 import ProductList from '../src/components/productList/ProductList'
+import Work from '../src/components/Work/Work'
 import Navbar from './components/navbar/Navbar';
 // import { BrowserRouter } from "react-router-dom";
 import {
@@ -21,12 +22,14 @@ ReactDOM.render(
       <Route path="/" element={<App />} />
       <Route path="/" element={<Intro />} />
       <Route path="about" element={<About />} />
-      <Route path="ProductList" element={<ProductList />} />
+      <Route path="Work" element={<Work />} />
       
       <Route path="contact" element={<Contact />} />
       
     </Routes>
   </BrowserRouter>
+
+
    
   
     

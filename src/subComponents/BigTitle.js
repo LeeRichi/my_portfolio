@@ -4,6 +4,7 @@ import styled from 'styled-components'
 
 const Text = styled.h1`
 position: fixed;
+
 top: ${props => props.top};
 left: ${props => props.left};
 right: ${props => props.right};
@@ -15,7 +16,7 @@ z-index:0;
 
 const BigTitle = (props) => {
     return (
-        <Text  top={props.top}  left={props.left}  right={props.right}>
+        <Text  top={props.top}  left={props.left}  right={props.right} >
             {props.text}
         </Text>
     )

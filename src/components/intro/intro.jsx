@@ -1,6 +1,6 @@
 import "./intro.css";
 import Me from "../../image/AvatarMaker.png";
-import Logo from "../../image/6-removebg-preview.png";
+
 import { useState } from "react";
 import { GiHamburgerMenu } from 'react-icons/gi';
 import { Background } from "tsparticles/Options/Classes/Background/Background";
@@ -14,8 +14,8 @@ const Intro = () =>
         
 
       <div className="i-left">
-        
         <div className="i-left-wrapper">
+          <img src={Me} alt="me" className="i-img-special" />
           <h2 className="i-intro">Hello, My name is</h2>
           <h1 className="i-name">Lee Chi</h1>
           <div className="i-title">
