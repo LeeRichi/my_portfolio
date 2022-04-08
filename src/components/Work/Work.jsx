@@ -52,13 +52,22 @@ z-index:3;
 
 const Work = () => {
     
-    const [width, setWidth] = useState(0);
-    const carousel = useRef();
+    const [width, setWidth] = useState(window.innerWidth);
+
+
+    const handleResize = () =>
+    {
+        setWidth(window.innerWidth)
+    }
 
     useEffect(() =>
     {
-        setWidth(carousel.current.scrollWidth - carousel.current.offsetWidth);
-    }, []);
+        window.addEventListener('resize', handleResize)
+
+        return () => {
+            window.removeEventListener('resize', handleResize)
+        }
+    }, [])
 
     return (
         <>
@@ -68,19 +77,24 @@ const Work = () => {
             <Box>
                     
                 <Title>
-                        Drag here to see my works
+                    Drag here to see my works
                 </Title>
                 
                     
                 <ParticleComponent theme='dark' />
-                <Main initial='hidden' animate='show' drag='x' ref={carousel}
-                        dragConstraints={{right: 0, left: -1000}}>
+                    <Main
+                        initial='hidden'
+                        animate='show'
+                        drag='x'
+                        dragConstraints={{ right: 0, left: width-1720 }}
+                        dragMomentum={false}
+                    >
                    
-                    {products.map((item) => (
-                        <Card key={item.id} name={item.name} tags={item.tags} description={item.description} img={item.img} link={item.link} git={item.git}/>
-                    ))}
-                                  
-                    </Main>
+                        {products.map((item) => (
+                            <Card key={item.id} name={item.name} tags={item.tags} description={item.description} img={item.img} link={item.link} git={item.git}/>
+                        ))}
+                              
+                </Main>
                    
             </Box>
 
@@ -89,6 +103,7 @@ const Work = () => {
         
     )
 }
+
 
 
 export default Work;

@@ -9,6 +9,7 @@
   background-color: black;
   color:whitesmoke;
   height: 100vh;
+  
 }
 
 .pl-texts {
@@ -35,13 +36,11 @@
 @media screen and (max-width: 480px) {
   .pl {
     padding: 10px;
+    width: 150%;
   }
 
   .pl-texts {
     width: 100%;
   }
 
-  .pl-desc {
-    display: none;
-  }
 }
