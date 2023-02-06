@@ -27,16 +27,7 @@ export const products = [
     link: "https://mockdata-table.netlify.app",
     git: 'https://github.com/LeeRichi/MockDataTable'
   },
-  // {
-  //   id: 3,
-  //   name: 'Delivery Fee Calculator',
-  //   description: 'This is the delivery-fee-calculating for food-delivery company. It counts the final price base on the amount of items, distance, and the rush hours.',
-  //   tags: ['typescript', 'react', 'form'],
-  //   img: url4,
-  //   link: "https://leechi-wolt-intern.netlify.app/",
-  //   git: 'https://github.com/LeeRichi/deliveryFeeCalculator'
-  // },
-  
+
 
   {
     id: 6,
