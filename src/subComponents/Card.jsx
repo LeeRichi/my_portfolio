@@ -90,35 +90,16 @@ ${Box}:hover &{
 `
 
 
-// const Img = styled.img`
-//     width:400px;
-//     height: 300px;
-//     display:none;
-//     opacity:95%;
-//     border: solid 1px white;
-//     margin-top: -18rem;
-    
 
-//     ${Box}:hover &{
-//         display:block;
-//     }
-// `
 
 
 
 
 const Card = (props) => {
 
-    // const { id, name, description, tags, link, git } = props.data;
-    // const { name } = props.products;
-    
-    
-
     return (
-        // <Box key={id} variants={Item}>
         <>
         <Box props={props.img}>
-            {/* <Img src={props.img}/> */}
             <Title>{props.name}</Title>
             <Description>
                 {props.description}

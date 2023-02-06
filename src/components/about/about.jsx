@@ -16,7 +16,6 @@ background-color: ${props => props.theme.body};
 width: 100vw;
 height:100vh;
 position: relative;
-
 `
 const float = keyframes`
 0% { transform: translateY(-10px) }
@@ -88,6 +87,7 @@ const Main =  styled.div`
 
   @media screen and (max-width: 900px) {
       font-size 20px;
+      height: 80vh;
   }
   
   
@@ -102,9 +102,6 @@ const AboutPage = () => {
         <Navbar />
         <ThemeProvider theme={DarkTheme}>
             <Box>
-                {/* <LogoComponent theme='dark'/> */}
-                {/* <SocialIcons theme='dark'/> */}
-                {/* <PowerButton /> */}
                 <ParticleComponent theme='dark' />
                 <Spaceman>
                     <img src={astronaut} alt="spaceman" />
