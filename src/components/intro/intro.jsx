@@ -26,7 +26,7 @@ const Intro = () =>
             </div>
           </div>
           <p className="i-desc">
-            I am a Junior Frontend Developer located in Taipei, Taiwan.
+            I am a Junior Frontend Developer located in Helsinki, Finland.
             <br/>Scrow to down below to get to know me.
 
           </p>
