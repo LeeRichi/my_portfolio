@@ -82,9 +82,13 @@ const Main =  styled.div`
   left: calc(5rem + 5vw);
   top: 10rem;
 
+  @media screen and (max-width: 600px) {
+      font-size 20px;
+      border: none;
+  }
   @media screen and (max-width: 900px) {
       font-size 20px;
-      height: 80vh;
+      height: 120vh;
   }
   @media screen and (max-width: 1450px) {
       height: 70vh;
