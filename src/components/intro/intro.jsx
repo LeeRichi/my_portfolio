@@ -10,25 +10,23 @@ const Intro = () =>
   
   return (
     <div className="i">
-
-        
-
       <div className="i-left">
         <div className="i-left-wrapper">
           <img src={Me} alt="me" className="i-img-special" />
-          <h2 className="i-intro">Hello, My name is</h2>
+          <h2 className="i-intro">Hello, I am</h2>
           <h1 className="i-name">Lee Chi</h1>
+          <h2 className="i-intro"><i>&lt;FullStack Developer /&gt;</i></h2>
           <div className="i-title">
             <div className="i-title-wrapper">
-              <div className="i-title-item">CSS</div>
               <div className="i-title-item">React</div>
               <div className="i-title-item">Javascript</div>
+              <div className="i-title-item">C#</div>
+              <div className="i-title-item">Redux</div>
             </div>
           </div>
           <p className="i-desc">
-            I am a Junior Frontend Developer located in Helsinki, Finland.
-            <br/>Scrow to down below to get to know me.
-
+            I am a Junior Full Stack Developer located in Helsinki, Finland.
+            <br/>Scroll down below to get to know me.
           </p>
         </div>
         <svg
@@ -40,7 +38,6 @@ const Intro = () =>
             className="i-scroll"
             xmlns="http://www.w3.org/2000/svg"
             >
-        
           <g id="scroll">
             <path
               id="Vector"
