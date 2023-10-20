@@ -88,7 +88,6 @@ ${Box}:hover &{
 
 const Card = (props) =>
 {
-    console.log(props.git)
     return (
         <>
         <Box props={props.img}>
