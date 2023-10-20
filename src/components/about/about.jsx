@@ -2,9 +2,6 @@ import React from 'react'
 import styled, { keyframes, ThemeProvider } from 'styled-components'
 import {DarkTheme} from '../../components/themes/Themes';
 import Navbar from "../navbar/Navbar";
-// import LogoComponent from '../subComponents/LogoComponent';
-// import SocialIcons from '../subComponents/SocialIcons';
-// import PowerButton from '../subComponents/PowerButton';
 import ParticleComponent from '../../subComponents/ParticleComponent';
 
 import BigTitle from '../../subComponents/BigTitle'
@@ -89,12 +86,10 @@ const Main =  styled.div`
       font-size 20px;
       height: 80vh;
   }
-  
-  
+  @media screen and (max-width: 1450px) {
+      height: 70vh;
+  }
 `
-
-
-
 
 const AboutPage = () => {
     return (
@@ -110,18 +105,11 @@ const AboutPage = () => {
                     <img src={sun} alt="sun" />
                 </Waterman>
                 <Main>
-                    A little story about me:
-                    <br/> <br />
-                    I was a master-degree computer-science student in Taiwan back in 2021, but I realized I want to focus on what
-                    motivates me the most: Fronted-Development.
-                    <br />
-                    Instead of spending more time studying everything, I decided to drop out from the "degree" and look for an opportunity to build my career.
-                    <br /> <br/>
-                    There are some of my little projects down below.
-                    {/* I am a very easy-going, open-minded person. I like to be around with people. I had played in school basketball team for many years which makes me a good team-player. */}
-                    <br/> <br/>
-                    {/* I believe everything is an Art when you put your consciousness in it. You can connect with me via social links. */}
-                    
+                    👋 Hi, my name is Lee Chi, a Full-Stack Developer based in Helsinki.
+                    <br /><br />
+                    I graduated from National Formosa University in Taiwan. I have a background in business and several years of experience in marketing work. However, when I had the opportunity to design a webpage for my previous work, I fell in love with coding. Ever since then, I have been passionate about programming and dedicated to improving and expanding my technical skills every single day.
+                    <br/><br/>
+                    I am currently training in Integrify's Full Stack program to further enhance my knowledge in back-end technology. I thoroughly enjoy the challenges provided by the program, as they allow me to constantly improve and strive to be better than I was yesterday. I am eagerly looking forward to transitioning into a full-time position as a full stack developer, where I can utilize my skills to solve real-world problems.
                 </Main>
                 <BigTitle text="Welcome" top="10%" left="7%" />
             </Box>

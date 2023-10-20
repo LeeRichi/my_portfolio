@@ -6,29 +6,31 @@ import './card.css'
 import { AiOutlineGithub } from 'react-icons/ai'
 
 const Box = styled(motion.li)`
-width: 16rem;
-height: 40vh;
-background-color: black;
-color: white;
-padding: 1.5rem 2rem;
-margin-right: 4rem;
-border-radius: 0 50px 0 50px;
-display: flex;
-flex-direction: column;
-justify-content: space-between;
-border: 1px solid white;
-transition: all 0.2s ease;
-z-index:1;
-background-image:url:(${props =>props.img});
-// over-flow:hidden;
+    width: 16rem;
+    height: 40vh;
+    background-color: black;
+    color: white;
+    padding: 1.5rem 2rem;
+    margin-right: 4rem;
+    border-radius: 0 50px 0 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border: 1px solid white;
+    transition: all 0.2s ease;
+    z-index:1;
+    background-image:url:(${props =>props.img});
 
+    &:hover{
+        background-color: white;
+        color:black;
+        border: 1px solid black;
+        cursor:pointer
+    }
 
-&:hover{
-background-color: white;
-color:black;
-border: 1px solid black;
-cursor:pointer
-}
+     @media screen and (max-width: 1450px) {
+      height: 50vh;
+    }
 `
 
 const Title = styled.h2`
