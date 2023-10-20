@@ -5,9 +5,6 @@ import styled from 'styled-components';
 import './card.css'
 import { AiOutlineGithub } from 'react-icons/ai'
 
-
-
-
 const Box = styled(motion.li)`
 width: 16rem;
 height: 40vh;
@@ -89,14 +86,9 @@ ${Box}:hover &{
 }
 `
 
-
-
-
-
-
-
-const Card = (props) => {
-
+const Card = (props) =>
+{
+    console.log(props.git)
     return (
         <>
         <Box props={props.img}>
@@ -110,16 +102,15 @@ const Card = (props) => {
                 })
             }
             </Tags>
-            <Footer>
-                <Link>
-                    <div>
-                        <a href={props.link}>
-                            visit
-                        </a>
-                    </div>
-                </Link>
-               
-                <Git>
+            <Footer>        
+                <Link href={props.link} target="_blank" rel="noopener noreferrer">
+                    <a href={props.link} target="_blank" rel="noopener noreferrer">
+                        <div>
+                            Visit
+                        </div>
+                    </a> 
+                </Link>                  
+                <Git href={props.git}>
                     <a href={props.git}>
                         <AiOutlineGithub
                         size="30px"
@@ -132,8 +123,7 @@ const Card = (props) => {
                         }} />
                     </a>
                 </Git>
-            </Footer>
-            
+            </Footer>            
         </Box>
     </>
     )

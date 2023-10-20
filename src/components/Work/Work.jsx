@@ -54,7 +54,6 @@ const Work = () => {
     
     const [width, setWidth] = useState(window.innerWidth);
 
-
     const handleResize = () =>
     {
         setWidth(window.innerWidth)
@@ -72,15 +71,11 @@ const Work = () => {
     return (
         <>
         <Navbar />
-        {/* <ParticleComponent theme='dark' /> */}
         <ThemeProvider theme={DarkTheme}>
-            <Box>
-                    
+            <Box>                    
                 <Title>
                     Drag here to see my works
-                </Title>
-                
-                    
+                </Title>         
                 <ParticleComponent theme='dark' />
                     <Main
                         initial='hidden'
@@ -88,19 +83,14 @@ const Work = () => {
                         drag='x'
                         dragConstraints={{ right: 0, left: width-1720 }}
                         dragMomentum={false}
-                    >
-                   
+                    >                   
                         {products.map((item) => (
-                            <Card key={item.id} name={item.name} tags={item.tags} description={item.description} img={item.img} link={item.link} git={item.git}/>
-                        ))}
-                              
-                </Main>
-                   
+                            <Card key={item.id} name={item.name} tags={item.tags} description={item.description} img={item.img} link={item.link} git={item.github}/>
+                        ))}                              
+                </Main>                   
             </Box>
-
         </ThemeProvider>
-        </>
-        
+        </> 
     )
 }
 
