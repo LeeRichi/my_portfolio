@@ -2,8 +2,6 @@ import "./product.css";
 
 const Product = ({ img, link }) =>
 {
-  console.log('hi')
-  console.log(img)
   return (
     <>
       <div className="p">

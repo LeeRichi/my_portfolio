@@ -1,16 +1,14 @@
 import "./productList.css";
 import Product from "../product/Product";
 import { products } from "../../data";
-import Navbar from "../navbar/Navbar";
 
 const ProductList = () =>
 {
   return (
     <>
-    <Navbar />
       <div className="pl">
         <div className="pl-texts">
-          <h1 className="pl-title">My Current Projects</h1>      
+          <h1 className="pl-title">My Current Projects</h1>
         </div>
         <div className="pl-list">
           {products.map((item) => (

@@ -1,111 +1,70 @@
-import "./contact.css";
-import { FcCellPhone } from 'react-icons/fc';
-import { SiMinutemailer } from 'react-icons/si'
-import { FcHome } from 'react-icons/fc'
-import { AiOutlineGithub, AiFillLinkedin } from 'react-icons/ai'
-import Navbar from "../navbar/Navbar";
+import { FaGithub, FaYoutube, FaLinkedin } from 'react-icons/fa';
+import Lanyard from '/Users/ichr/Desktop/personal_web/src/blocks/Components/Lanyard/Lanyard.jsx'
 
-// import Phone from "../../img/phone.png";
-// import Email from "../../img/email.png";
-// import Address from "../../img/address.png";
-import { useContext, useRef, useState } from "react";
-import emailjs from "emailjs-com";
-// import { ThemeContext } from "../../context";
 
 const Contact = () => {
-  const formRef = useRef();
-  const [done, setDone] = useState(false)
-//   const theme = useContext(ThemeContext);
-//   const darkMode = theme.state.darkMode;
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    emailjs
-      .sendForm(
-        "service_hh37yvg",
-        "template_11ut7sg",
-        formRef.current,
-        "user_KkzQmUfBwzHX54slkC4zh"
-      )
-      .then(
-        (result) => {
-          console.log(result.text);
-          setDone(true)
-        },
-        (error) => {
-          console.log(error.text);
-        }
-      );
-  };
-
   return (
-    <>
-      <Navbar/>
-      <div className="c">
-        <div className="c-bg"></div>
-        <div className="c-wrapper">
-          <div className="c-left">
-            <h1 className="c-title">Feel free to contact me</h1>
-            <div className="c-info">
-              <div className="c-info-item">           
-                  <FcCellPhone size="30px"/>+358 9018 278
-              </div>
-              <div className="c-info-item">
-                  <SiMinutemailer size="30px"/>lee.rich.chi@gmail.com
-              </div>            
-            </div>
-            <a href="https://github.com/LeeRichi?tab=repositories">
-              <AiOutlineGithub
-              size="50px"
-              cursor="pointer"
-              style={{
-                  position: 'relative',
-                  padding: '15px',
-                  cursor: 'pointer',
-                  color: 'white'
-              }} />
-            </a>
-            <a href="https://www.linkedin.com/in/leerichchi/">
-              <AiFillLinkedin
-                size="50px"
-                cursor="pointer"
-                style={{
-                  position: 'relative',
-                  padding: '15px',
-                  color: 'white'
-                }}
-              />
-            </a>
-            <div className="c-hide">
-              <div className="shape"></div>
-              <form ref={formRef} onSubmit={handleSubmit}>
-                <h3>Get in touch. Simply write your email and ask me anything.</h3>
-                <input  type="text" placeholder="Name" name="user_name" />
-                <input  type="text" placeholder="Subject" name="user_subject" />
-                <input  type="text" placeholder="Email" name="user_email" />
-                <textarea  rows="5" placeholder="Message" name="message" />
-                <button>Submit</button>
-                {done && "Succeed"}
-              </form>
-            </div>
-          </div>
-          <div className="c-right">
-            <div className="shape"></div>
-            <form ref={formRef} onSubmit={handleSubmit}>
-              <h3>Get in touch. Simply write your email and ask me anything.</h3>                      
-              <input  type="text" placeholder="Name" name="user_name" />
-              <input  type="text" placeholder="Subject" name="user_subject" />
-              <input  type="text" placeholder="Email" name="user_email" />
-              <textarea  rows="5" placeholder="Message" name="message" />
-              <button>Submit</button>
-              {done && "Succeed"}
-            </form>
-          </div>
-        </div>
-      </div>
-    </>
+    <div style={containerStyle}>
+      <Lanyard position={[0, 0, 20]} gravity={[0, -40, 0]} />
+
+      <footer style={footerStyle}>
+        <a
+          href="https://github.com/LeeRichi"
+          target="_blank"
+          rel="noopener noreferrer"
+          style={iconLinkStyle}
+          aria-label="GitHub"
+        >
+          <FaGithub size={32} />
+        </a>
+        <a
+          href="https://www.youtube.com/@richibanOMG"
+          target="_blank"
+          rel="noopener noreferrer"
+          style={iconLinkStyle}
+          aria-label="YouTube"
+        >
+          <FaYoutube size={32} color="#FF0000" />
+        </a>
+
+        <a
+          href="https://linkedin.com/in/leerichchi"
+          target="_blank"
+          rel="noopener noreferrer"
+          style={iconLinkStyle}
+          aria-label="LinkedIn"
+        >
+          <FaLinkedin size={32} color="#0A66C2" />
+        </a>
+      </footer>
+    </div>
   );
-      
 };
+
+const footerStyle = {
+	position: 'relative',
+  display: 'flex',
+  justifyContent: 'center',
+  gap: '3rem',
+  padding: '1rem 0',
+  backgroundColor: 'black',
+  color: 'white',
+  height: 50,
+};
+
+const iconLinkStyle = {
+  color: 'white',
+  textDecoration: 'none',
+};
+
+const containerStyle = {
+  display: 'flex',
+  flexDirection: 'column',
+  alignItems: 'center',
+  justifyContent: 'center',
+  height: '100vh',
+  backgroundColor: '#f0f0f0',
+  background: 'black'
+}
 
 export default Contact;

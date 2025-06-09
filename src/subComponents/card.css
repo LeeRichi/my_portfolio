@@ -2,3 +2,12 @@ a {
     text-decoration: none;
     color:black;
 }
+
+.badge {
+  background-color: grey;
+  color: white;
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.8rem;
+	margin: 5px;
+}

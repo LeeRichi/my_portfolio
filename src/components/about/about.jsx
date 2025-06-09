@@ -1,70 +1,47 @@
-import React from 'react'
 import styled, { keyframes, ThemeProvider } from 'styled-components'
 import {DarkTheme} from '../../components/themes/Themes';
-import Navbar from "../navbar/Navbar";
 import ParticleComponent from '../../subComponents/ParticleComponent';
-
-import BigTitle from '../../subComponents/BigTitle'
-import astronaut from '../../image/me.jpg'
-import sun from '../../image/earth.png'
+import Background_floating_obj from '../../subComponents/Background_floating_obj'
+import astronaut from '../../image/Chi_Lee_without_background.png'
+import Earth from '../../image/earth.png'
+import ProfileCard from '../../blocks/Components/ProfileCard/ProfileCard'
 
 const Box = styled.div`
-background-color: ${props => props.theme.body};
-width: 100vw;
-height:100vh;
-position: relative;
-`
-const float = keyframes`
-0% { transform: translateY(-10px) }
-50% { transform: translateY(15px) translateX(15px) }
-100% { transform: translateY(-10px) }
-`
+  background-color: ${props => props.theme.body};
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem;
 
-const rotate = keyframes`
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}`
-
-const Spaceman = styled.div`
-position: absolute;
-top: 12%;
-right: 5%;
-width: 22vw;
-animation: ${float} 4s ease infinite;
-z-index:1;
-img{
-    width: 100%;
+  @media screen and (max-width: 900px) {
+    flex-direction: column;
     height: auto;
-    border-radius:50%;
-    border: rgba(243, 245, 39, 0.3) solid 1px;
-}
+    min-height: 100vh;
+  }
+`
+const ProfileCardWrapper = styled.div`
+  position: absolute;
+  top: 20rem;
+  right: 15rem;
+  z-index: 3;
+
+  @media screen and (max-width: 1200px) {
+    right: 2rem;
+    top: 8rem;
+  }
+
+  @media screen and (max-width: 900px) {
+    position: relative;
+    top: 0;
+    right: 0;
+    margin: 2rem 0;
+  }
 `
 
-const Waterman = styled.div`
-animation: App-logo-spin infinite 20s linear;
-position: absolute;
-top: 50%;
-right: 23%;
-width: 15vw;
-animation: ${float} 6s ease infinite;
-z-index:0;
-// transform: scaleY(-1);
-&:hover {
-    animation: ${rotate} 18s ease infinite;
-}
-img{
-    width: 170%;
-    height: auto;
-    border-radius:50%:
-    transform: scaleX(-1);
-}
-`
-
-const Main =  styled.div`
+const Main = styled.div`
   border: 2px solid ${(props) => props.theme.text};
   color: ${(props) => props.theme.text};
   padding: 2rem;
@@ -77,49 +54,83 @@ const Main =  styled.div`
   align-items: center;
   font-size: calc(0.6rem + 1vw);
   backdrop-filter: blur(4px);
-  
   position: absolute;
   left: calc(5rem + 5vw);
   top: 10rem;
 
   @media screen and (max-width: 600px) {
-      font-size 20px;
-      border: none;
+    font-size: 20px;
+    width: 85vw;
+    border: none;
+    left: 0;
+    top: 0;
+    position: relative;
   }
+
   @media screen and (max-width: 900px) {
-      font-size 20px;
-      height: 120vh;
+    font-size: 20px;
+    height: auto;
+    min-height: 50vh;
+    width: 90vw;
+    left: 0;
+    position: relative;
+    margin: 0 0 8rem 0;
   }
+
   @media screen and (max-width: 1450px) {
-      height: 70vh;
+    height: 70vh;
   }
 `
 
 const AboutPage = () => {
-    return (
-        <>
-        <Navbar />
-        <ThemeProvider theme={DarkTheme}>
-            <Box>
-                <ParticleComponent theme='dark' />
-                <Spaceman>
-                    <img src={astronaut} alt="spaceman" />
-                </Spaceman>  
-                <Waterman>
-                    <img src={sun} alt="sun" />
-                </Waterman>
-                <Main>
-                    👋 Hi, my name is Lee Chi, a Full-Stack Developer based in Helsinki.
-                    <br /><br />
-                    I graduated from National Formosa University in Taiwan. I have a background in business and several years of experience in marketing work. However, when I had the opportunity to design a webpage for my previous work, I fell in love with coding. Ever since then, I have been passionate about programming and dedicated to improving and expanding my technical skills every single day.
-                    <br/><br/>
-                    I am currently training in Integrify's Full Stack program to further enhance my knowledge in back-end technology. I thoroughly enjoy the challenges provided by the program, as they allow me to constantly improve and strive to be better than I was yesterday. I am eagerly looking forward to transitioning into a full-time position as a full stack developer, where I can utilize my skills to solve real-world problems.
-                </Main>
-                <BigTitle text="Welcome" top="10%" left="7%" />
-            </Box>
-        </ThemeProvider>
-       </> 
-    )
+  const handleContactClick = () => {
+    // Add your contact logic here
+    // For example: scroll to contact section, open modal, etc.
+    console.log('Contact clicked');
+    // You could also do something like:
+    // document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+  }
+
+  return (
+    <div id='about'>
+      <ThemeProvider theme={DarkTheme}>
+        <Box>
+          <ParticleComponent theme='dark' />
+          <ProfileCardWrapper>
+            <ProfileCard
+              name="Chi Lee"
+              title="< Full-Stack Developer />"
+              handle="chilee"
+              status="Available"
+              contactText="Let's Connect"
+              avatarUrl={astronaut}
+              showUserInfo={true}
+              enableTilt={true}
+              onContactClick={handleContactClick}
+            />
+          </ProfileCardWrapper>
+
+          <Main>
+            <br />
+            👋 Hi there,
+            <br /><br />
+            my name is Chi Lee, a Full-Stack Developer based in Helsinki, passionate about building real-world applications.
+            Currently studying at Hive Helsinki.<br /><br />
+            Recently, I won:<br />
+            🏆 Junction 2024 — Europe's leading hackathon<br />
+            🤖 Supercell × Junction AI Hackathon 2025<br />
+            <br />
+            Alongside school, I'm dedicating building my own side projects for fun.🌟
+            <br /><br />
+            If you're looking for someone with practical skills and hackathon-tested creativity — let's connect!
+          </Main>
+
+          <Background_floating_obj image={Earth} top="5%" left="72%" />
+        </Box>
+      </ThemeProvider>
+    </div>
+  )
 }
+
 
 export default AboutPage
