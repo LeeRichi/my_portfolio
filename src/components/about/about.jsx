@@ -5,6 +5,7 @@ import Background_floating_obj from '../../subComponents/Background_floating_obj
 import astronaut from '../../image/Chi_Lee_without_background.png'
 import Earth from '../../image/earth.png'
 import ProfileCard from '../../blocks/Components/ProfileCard/ProfileCard'
+import { scrollToSection } from '../../utils/scrollHelpers';
 
 const Box = styled.div`
   background-color: ${props => props.theme.body};
@@ -17,6 +18,7 @@ const Box = styled.div`
   @media screen and (max-width: 900px) {
     flex-direction: column;
     min-height: 100vh;
+    // height: 120vh;
   }
 `
 const ProfileCardWrapper = styled.div`
@@ -35,11 +37,16 @@ const ProfileCardWrapper = styled.div`
     top: 8rem;
   }
 
-  @media screen and (max-width: 900px) {
+  @media screen and (max-width: 1080px) {
     position: relative;
     top: 0;
     right: 0;
-    margin: 2rem 0;
+    margin: 0rem 0;
+    transform: scale(0.8); /* Add this line */
+  }
+
+  @media screen and (max-width: 600px) {
+    transform: scale(0.7); /* Even smaller for very small devices */
   }
 `
 
@@ -48,7 +55,7 @@ const Main = styled.div`
   color: ${(props) => props.theme.text};
   padding: 2rem;
   width: 50vw;
-  height: 60vh;
+  height: 75vh;
   z-index: 3;
   line-height: 1.5;
   display: flex;
@@ -62,36 +69,28 @@ const Main = styled.div`
 
   @media screen and (max-width: 600px) {
     font-size: 20px;
-    width: 85vw;
+    width: 100vw;
     border: none;
     left: 0;
     top: 0;
     position: relative;
+    padding: 0.5rem;
   }
 
   @media screen and (max-width: 900px) {
     font-size: 20px;
-    height: auto;
     min-height: 50vh;
-    width: 90vw;
-    left: 0;
+    width: 80vw;
     position: relative;
     margin: 0 0 15rem 0;
-  }
-
-  @media screen and (max-width: 1450px) {
-    height: 70vh;
-    left: calc(2rem + 2vw);
+    top: -2rem;
+    left: 0;
   }
 `
 
 const AboutPage = () => {
   const handleContactClick = () => {
-    // Add your contact logic here
-    // For example: scroll to contact section, open modal, etc.
-    console.log('Contact clicked');
-    // You could also do something like:
-    // document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+    scrollToSection('contact')
   }
 
   return (
@@ -110,6 +109,7 @@ const AboutPage = () => {
               showUserInfo={true}
               enableTilt={true}
               onContactClick={handleContactClick}
+              // className='ProfileCard'
             />
           </ProfileCardWrapper>
 
@@ -135,6 +135,5 @@ const AboutPage = () => {
     </div>
   )
 }
-
 
 export default AboutPage

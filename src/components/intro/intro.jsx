@@ -19,14 +19,25 @@ const Intro = () => {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
+  // const modelStyle = {
+  //   marginTop: isMobile ? "-10rem" : isLargeScreen ? "20rem" : "15rem",
+  //   width: "100%",
+  //   maxWidth: isLargeScreen ? "600px" : isMobile ? "100%" : "400px",
+  //   height: isLargeScreen ? "500px" : isMobile ? "300px" : "400px",
+  //   zIndex: "1",
+  //   objectFit: "contain",
+  // };
+
   const modelStyle = {
-    marginTop: isMobile ? "-10rem" : isLargeScreen ? "20rem" : "15rem",
-    width: "100%",
-    maxWidth: isLargeScreen ? "600px" : isMobile ? "100%" : "400px",
+  marginTop: isMobile ? "-10rem" : isLargeScreen ? "20rem" : "15rem",
+  width: "100%",
+  maxWidth: isLargeScreen ? "500px" : isMobile ? "300px" : "400px", // reduce width here
     height: isLargeScreen ? "500px" : isMobile ? "300px" : "400px",
-    zIndex: "1",
-    objectFit: "contain",
-  };
+  zIndex: "1",
+  objectFit: "contain",
+  aspectRatio: "3 / 4", // optional: enforce a nice portrait ratio
+};
+
 
   return (
     <div className="i">

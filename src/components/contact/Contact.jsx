@@ -34,6 +34,7 @@ const footerStyle = {
   backgroundColor: 'black',
   color: 'white',
   height: 50,
+  bottom: window.innerWidth < 768 ? '0' : 30, // Adjust height for mobile
 };
 
 const containerStyle = {
@@ -41,11 +42,11 @@ const containerStyle = {
   flexDirection: 'column',
   alignItems: 'center',
   justifyContent: 'center',
-  height: '100vh',
+  // height: '100vh',
   backgroundColor: '#f0f0f0',
   background: 'black',
-  // width: '100vw',
   width: window.innerWidth < 768 ? 'auto' : '100vw', // Smaller height on mobile
+  height: window.innerWidth < 768 ? 'auto' : '100vh', // Smaller height on mobile
 }
 
 export default Contact;

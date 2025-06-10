@@ -1,8 +1,10 @@
 .i {
   display: flex;
-  height: 100vh;
+  /* height: 100vh; */
+  min-height: 100vh; /* Change from height to min-height */
   color: whitesmoke;
   width: 100vw;
+  overflow-x: hidden;
 }
 
 .i-left {
@@ -11,6 +13,7 @@
   align-items: center;
   justify-content: center;
   background-color: black;
+  padding: 20px;
 }
 
 .i-right {
@@ -18,8 +21,10 @@
   background-color: black;
 }
 
-.i-img-special{
-  display:none;
+.i-right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .logo {
@@ -41,11 +46,11 @@
 }
 
 .i-left-wrapper {
-  padding: 50px;
   height: 50%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  gap: 20px;
 }
 
 .i-intro {
@@ -123,10 +128,10 @@
 @media screen and (max-width: 900px) {
   .i {
     flex-direction: column;
-    height: auto; /* Adjust height for stacked layout */
+    height: auto;
   }
 
-  .i-left, .i-right {
+  .i-right {
 		padding-top: 125px;
     /* padding: 10px; */
   }
@@ -159,58 +164,5 @@
 
   .temp {
     display: none;
-  }
-}
-
-/* Small Devices */
-@media screen and (max-width: 480px) {
-  .i {
-    flex-direction: column;
-    height: auto; /* Adjust height for stacked layout */
-  }
-
-  .i-left, .i-right {
-		padding-top: 25px;
-    flex: unset;
-  }
-
-  .i-left-wrapper {
-    text-align: center;
-  }
-
-  .i-intro {
-    font-size: 20px;
-  }
-
-  .i-name {
-    font-size: 30px; /* Adjusted font size for small screens */
-  }
-
-	.i-title {
-		margin-top: -10px;
-	}
-
-  .i-title-item {
-		margin: 100px;
-    font-size: 18px; /* Smaller title item font */
-  }
-
-  /* .i-bg {
-    display: none;
-  } */
-
-  .i-img {
-    display: none;
-  }
-
-  .i-img-special {
-    display: block;
-    margin-top: -10%;
-    width: 100%;
-  }
-
-  .i-scroll {
-    width: 20px;
-    height: 20px;
   }
 }
