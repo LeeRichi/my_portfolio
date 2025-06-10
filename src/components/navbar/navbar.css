@@ -40,7 +40,7 @@ main {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 1rem;
+  /* padding: 0 1rem; */
   z-index: 200;
   transition: background-color var(--transition-speed), transform 0.3s ease, opacity 0.3s ease;
   overflow: hidden;
@@ -71,6 +71,7 @@ main {
 .chili-icon {
   width: 32px;
   height: 32px;
+  padding: 20px;
 }
 
 .navbar-nav {

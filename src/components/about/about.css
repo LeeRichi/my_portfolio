@@ -2,7 +2,7 @@
   height: 100vh;
   display: flex;
   align-items: center;
-  width:110vw;
+  width:100vw;
   overflow: hidden;
 }
 
@@ -100,7 +100,6 @@
       padding: 20px;
     }
 }
-
 
 @keyframes App-logo-spin {
   from {

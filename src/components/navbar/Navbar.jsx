@@ -69,6 +69,12 @@ const Navbar = () => {
           </button>
         </li>
 
+        <li className="nav-item">
+          <button className="nav-link" onClick={() => scrollToSection('contact')}>
+            <span className="link-text">Contact</span>
+          </button>
+        </li>
+
       </ul>
     </nav>
   );

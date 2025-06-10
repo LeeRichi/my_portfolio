@@ -14,22 +14,24 @@ const Box = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 2rem;
-
   @media screen and (max-width: 900px) {
     flex-direction: column;
-    height: auto;
     min-height: 100vh;
   }
 `
 const ProfileCardWrapper = styled.div`
   position: absolute;
-  top: 20rem;
-  right: 15rem;
+  top: 15rem;
+  right: 10rem;
   z-index: 3;
 
+  @media screen and (max-width: 1500px) {
+    right: 6rem;
+    top: 8rem;
+  }
+
   @media screen and (max-width: 1200px) {
-    right: 2rem;
+    right: rem;
     top: 8rem;
   }
 
@@ -56,7 +58,7 @@ const Main = styled.div`
   backdrop-filter: blur(4px);
   position: absolute;
   left: calc(5rem + 5vw);
-  top: 10rem;
+  top: 5rem;
 
   @media screen and (max-width: 600px) {
     font-size: 20px;
@@ -79,6 +81,7 @@ const Main = styled.div`
 
   @media screen and (max-width: 1450px) {
     height: 70vh;
+    left: calc(2rem + 2vw);
   }
 `
 

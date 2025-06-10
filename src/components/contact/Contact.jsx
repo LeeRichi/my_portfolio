@@ -11,7 +11,7 @@ import Dock from '../../blocks/Components/Dock/Dock.jsx'
 
 const Contact = () => {
   return (
-    <div style={containerStyle}>
+    <div style={containerStyle} id='contact'>
       <Lanyard position={[0, 0, 20]} gravity={[0, -40, 0]} />
 
       <footer style={footerStyle}>
@@ -31,15 +31,10 @@ const footerStyle = {
   display: 'flex',
   justifyContent: 'center',
   gap: '3rem',
-  padding: '1rem 0',
+  // padding: '1rem 0',
   backgroundColor: 'black',
   color: 'white',
   height: 50,
-};
-
-const iconLinkStyle = {
-  color: 'white',
-  textDecoration: 'none',
 };
 
 const containerStyle = {
@@ -49,7 +44,9 @@ const containerStyle = {
   justifyContent: 'center',
   height: '100vh',
   backgroundColor: '#f0f0f0',
-  background: 'black'
+  background: 'black',
+  width: '100vw',
+  height: '100vh',
 }
 
 export default Contact;
