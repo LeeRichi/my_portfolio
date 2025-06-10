@@ -20,6 +20,11 @@ const Box = styled.div`
     min-height: 100vh;
     // height: 120vh;
   }
+
+  @media screen and (max-width: 600px) {
+    height: 120vh;
+  }
+
 `
 const ProfileCardWrapper = styled.div`
   position: absolute;
@@ -67,6 +72,15 @@ const Main = styled.div`
   left: calc(5rem + 5vw);
   top: 5rem;
 
+  div {
+    display: flex;
+    flex-direction: column;
+  }
+
+  p {
+    margin-bottom: 1.2rem;
+  }
+
   @media screen and (max-width: 600px) {
     font-size: 20px;
     width: 100vw;
@@ -109,26 +123,31 @@ const AboutPage = () => {
               showUserInfo={true}
               enableTilt={true}
               onContactClick={handleContactClick}
-              // className='ProfileCard'
             />
           </ProfileCardWrapper>
 
           <Main>
-            <br />
-            👋 Hi there,
-            <br /><br />
-            my name is Chi Lee, a Full-Stack Developer based in Helsinki, passionate about building real-world applications.
-            Currently studying at Hive Helsinki.<br /><br />
-            Recently, I won:<br />
-            🏆 Junction 2024 — Europe's leading hackathon<br />
-            🤖 Supercell × Junction AI Hackathon 2025<br />
-            <br />
-            Alongside school, I'm dedicating building my own side projects for fun.🌟
-            <br /><br />
-            If you're looking for someone with practical skills and hackathon-tested creativity — let's connect!
-            <br /><br />
+            <div>
+              <p>👋 Hi there,</p>
+              <p>
+                My name is Chi Lee, a Full-Stack Developer based in Helsinki, passionate about building real-world applications.
+                Currently studying at Hive Helsinki.
+              </p>
+              <p>
+                Recently, I won:
+                <br />
+                🏆 Junction 2024 — Europe&apos;s leading hackathon
+                <br />
+                🤖 Supercell × Junction AI Hackathon 2025
+              </p>
+              <p>
+                Alongside school, I&apos;m dedicating time to building my own side projects for fun. 🌟
+              </p>
+              <p>
+                If you&apos;re looking for someone with practical skills and hackathon-tested creativity — let&apos;s connect!
+              </p>
+            </div>
           </Main>
-
           <Background_floating_obj image={Earth} top="5%" left="72%" />
         </Box>
       </ThemeProvider>

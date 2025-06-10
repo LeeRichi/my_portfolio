@@ -39,3 +39,7 @@ yarn-error.log*
 */data.js
 
 .http
+
+build
+
+node_modules
