@@ -74,7 +74,7 @@ const Main = styled.div`
     width: 90vw;
     left: 0;
     position: relative;
-    margin: 0 0 8rem 0;
+    margin: 0 0 15rem 0;
   }
 
   @media screen and (max-width: 1450px) {
@@ -123,6 +123,7 @@ const AboutPage = () => {
             Alongside school, I'm dedicating building my own side projects for fun.🌟
             <br /><br />
             If you're looking for someone with practical skills and hackathon-tested creativity — let's connect!
+            <br /><br />
           </Main>
 
           <Background_floating_obj image={Earth} top="5%" left="72%" />

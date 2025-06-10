@@ -10,7 +10,7 @@ import { useGLTF, useTexture, Environment, Lightformer } from '@react-three/drei
 import { BallCollider, CuboidCollider, Physics, RigidBody, useRopeJoint, useSphericalJoint } from '@react-three/rapier';
 import { MeshLineGeometry, MeshLineMaterial } from 'meshline';
 
-import cardGLB from "./card.glb";
+import cardGLB from "./card copy.glb";
 import lanyard from "./lanyard.png";
 
 import * as THREE from 'three';

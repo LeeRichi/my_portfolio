@@ -1,6 +1,13 @@
 import { FaGithub, FaYoutube, FaLinkedin } from 'react-icons/fa';
-import Lanyard from '/Users/ichr/Desktop/personal_web/src/blocks/Components/Lanyard/Lanyard.jsx'
+import Lanyard from '../../blocks/Components/Lanyard/Lanyard_old.jsx'
 
+import Dock from '../../blocks/Components/Dock/Dock.jsx'
+
+  const items = [
+    { icon: <FaGithub size={18} />, label: 'Home', onClick: () => window.open('https://github.com/LeeRichi', '_blank') },
+    { icon: <FaYoutube size={18} />, label: 'Archive', onClick: () => window.open('https://www.youtube.com/@richibanOMG', '_blank') },
+    { icon: <FaLinkedin size={18} />, label: 'Profile', onClick: () => window.open('https://www.linkedin.com/in/leerichchi', '_blank') },
+  ];
 
 const Contact = () => {
   return (
@@ -8,34 +15,12 @@ const Contact = () => {
       <Lanyard position={[0, 0, 20]} gravity={[0, -40, 0]} />
 
       <footer style={footerStyle}>
-        <a
-          href="https://github.com/LeeRichi"
-          target="_blank"
-          rel="noopener noreferrer"
-          style={iconLinkStyle}
-          aria-label="GitHub"
-        >
-          <FaGithub size={32} />
-        </a>
-        <a
-          href="https://www.youtube.com/@richibanOMG"
-          target="_blank"
-          rel="noopener noreferrer"
-          style={iconLinkStyle}
-          aria-label="YouTube"
-        >
-          <FaYoutube size={32} color="#FF0000" />
-        </a>
-
-        <a
-          href="https://linkedin.com/in/leerichchi"
-          target="_blank"
-          rel="noopener noreferrer"
-          style={iconLinkStyle}
-          aria-label="LinkedIn"
-        >
-          <FaLinkedin size={32} color="#0A66C2" />
-        </a>
+        <Dock
+          items={items}
+          panelHeight={68}
+          baseItemSize={50}
+          magnification={70}
+        />
       </footer>
     </div>
   );
