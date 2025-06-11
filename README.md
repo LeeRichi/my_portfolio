@@ -1,6 +1,5 @@
-This project is my personal website created by react.
+This project is my personal website created by react / three.js / framer motion / styled component.
 
-Framer motion, styled component is used to style this project.
+I am updating this readme now...
 
-demo: https://leechi.netlify.app/
-# portfolio
+demo: https://leechi.me/

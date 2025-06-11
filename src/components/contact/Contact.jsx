@@ -1,5 +1,5 @@
 import { FaGithub, FaYoutube, FaLinkedin } from 'react-icons/fa';
-import Lanyard from '../../blocks/Components/Lanyard/Lanyard_old.jsx'
+import Lanyard from '../../blocks/Components/Lanyard/Lanyard.jsx'
 
 import Dock from '../../blocks/Components/Dock/Dock.jsx'
 
